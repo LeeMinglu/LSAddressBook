@@ -122,18 +122,11 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
     }
     
     
-     // MARK: - textFieldDelegate方法
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        
-//        print(textField.text!)
-//        return true
-//    }
-//    
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        print(textField.text!)
-//    }
-//    
-//    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("*************")
+        let sourceController = segue.source
+        let destController = segue.destination
+        print("源控制器" + "\(sourceController)" + "目标控制器" + "\(destController)"  )
+    }
 
 }
