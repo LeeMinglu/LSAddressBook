@@ -127,6 +127,8 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
         let sourceController = segue.source
         let destController = segue.destination
         print("源控制器" + "\(sourceController)" + "目标控制器" + "\(destController)"  )
+        //在Segue里进行传值
+        destController.navigationItem.title = self.accountTextField.text
     }
 
 }
