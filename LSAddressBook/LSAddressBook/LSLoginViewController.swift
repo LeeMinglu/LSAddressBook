@@ -38,6 +38,9 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
         if self.autoLogin.isOn {
             self.clickLoginBtn(Any.self)
         }
+        
+//        self.accountTextField.text.isFirstResponder = true
+        self.accountTextField.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
 
@@ -69,6 +72,8 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
     */
     @IBAction func autoLogin(_ sender: Any) {
         print("切换了自动登陆")
+        
+        
        
         
     }
@@ -91,12 +96,6 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
             SVProgressHUD.show(withStatus: "正在登陆")
    
             
-            if !(self.remberPwd.isOn)   {
-                self.accountTextField.text = ""
-                self.passwordTextField.text = ""
-            } else {
-                print("此时会记住密码")
-            }
             
             let three = DispatchTime.now() + 2.0
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0, execute: {
@@ -119,6 +118,22 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
         
         
         
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if !(self.remberPwd.isOn)   {
+//            self.accountTextField.text = ""
+            self.passwordTextField.text = ""
+        } else {
+            print("此时会记住密码")
+        }
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+//        self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     
