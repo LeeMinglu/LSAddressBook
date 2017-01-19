@@ -146,7 +146,7 @@
         <!--添加联系人-->
         <scene sceneID="4xx-oP-zZT">
             <objects>
-                <viewController id="iNg-X9-bhm" sceneMemberID="viewController">
+                <viewController id="iNg-X9-bhm" customClass="LSAddViewController" customModule="LSAddressBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="584-Bx-O4q"/>
                         <viewControllerLayoutGuide type="bottom" id="aiA-Iq-h4f"/>
@@ -192,6 +192,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="添加联系人" id="KDp-5j-xef"/>
+                    <connections>
+                        <outlet property="addBtn" destination="fwk-q9-Z8O" id="b7j-lV-AIe"/>
+                        <outlet property="nameTextField" destination="anW-7g-4TQ" id="E3B-Un-CjE"/>
+                        <outlet property="numberOfTelPhone" destination="spd-Vo-1md" id="yZe-pK-7Ne"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajg-rU-qWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
