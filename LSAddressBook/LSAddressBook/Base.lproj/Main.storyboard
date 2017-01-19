@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,6 +56,7 @@
                                 <state key="normal" title="登陆"/>
                                 <connections>
                                     <action selector="clickLoginBtn:" destination="btF-gG-Nw5" eventType="touchUpInside" id="zvr-hZ-d0f"/>
+                                    <segue destination="cuD-Xz-VHz" kind="show" identifier="login2Contact" id="JaW-gU-yQf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="记住密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP3-3x-Bzd">
@@ -95,7 +97,6 @@
                         <outlet property="loginBtn" destination="8wF-RK-BWu" id="RQG-xJ-wBr"/>
                         <outlet property="passwordTextField" destination="XJp-cz-mEy" id="EkY-9u-rXR"/>
                         <outlet property="remberPwd" destination="09d-4s-B6X" id="LsF-UP-7cS"/>
-                        <segue destination="cuD-Xz-VHz" kind="push" identifier="login2Contact" id="Ntz-K9-aCz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQ3-qq-4GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -115,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZVs-lC-Shn" id="HHW-fW-zE7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -133,7 +134,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="添加" id="FMF-6i-wrO">
                             <connections>
-                                <action selector="clickAddContact:" destination="cuD-Xz-VHz" id="Rz5-Ar-Yix"/>
+                                <segue destination="iNg-X9-bhm" kind="show" id="Ux1-L1-6Id"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -142,11 +143,65 @@
             </objects>
             <point key="canvasLocation" x="689" y="131"/>
         </scene>
+        <!--添加联系人-->
+        <scene sceneID="4xx-oP-zZT">
+            <objects>
+                <viewController id="iNg-X9-bhm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="584-Bx-O4q"/>
+                        <viewControllerLayoutGuide type="bottom" id="aiA-Iq-h4f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K95-mM-dps">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="姓名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ca8-IX-Jag">
+                                <rect key="frame" x="57" y="147" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="电话:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyV-dz-6DF">
+                                <rect key="frame" x="57" y="181" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="anW-7g-4TQ">
+                                <rect key="frame" x="114" y="147" width="175" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spd-Vo-1md">
+                                <rect key="frame" x="114" y="181" width="175" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwk-q9-Z8O">
+                                <rect key="frame" x="171" y="245" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="添加"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加联系人" id="KDp-5j-xef"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajg-rU-qWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1618.4000000000001" y="131.78410794602701"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ze-LY-4F7">
             <objects>
                 <navigationController id="ikp-2I-od4" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xHo-oU-h7K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xHo-oU-h7K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

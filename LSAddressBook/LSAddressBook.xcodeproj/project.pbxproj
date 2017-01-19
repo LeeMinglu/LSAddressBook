@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A2CEAF11E2FAC2D002B3C1B /* LSContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CEAE61E2FAC2D002B3C1B /* LSContactController.swift */; };
-		1A2CEAF21E2FAC2D002B3C1B /* LSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CEAEB1E2FAC2D002B3C1B /* LSLoginViewController.swift */; };
 		1A2CEAF31E2FAC2D002B3C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CEAEF1E2FAC2D002B3C1B /* AppDelegate.swift */; };
+		1A2CEAF61E2FB18D002B3C1B /* LSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CEAF51E2FB18D002B3C1B /* LSLoginViewController.swift */; };
 		1A7825C51E29FB460024EFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7825C31E29FB460024EFB4 /* Main.storyboard */; };
 		1A7825C71E29FB460024EFB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7825C61E29FB460024EFB4 /* Assets.xcassets */; };
 		1A7825CA1E29FB460024EFB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7825C81E29FB460024EFB4 /* LaunchScreen.storyboard */; };
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		1A2CEAE61E2FAC2D002B3C1B /* LSContactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSContactController.swift; sourceTree = "<group>"; };
-		1A2CEAEB1E2FAC2D002B3C1B /* LSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSLoginViewController.swift; sourceTree = "<group>"; };
 		1A2CEAEF1E2FAC2D002B3C1B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2CEAF01E2FAC2D002B3C1B /* LSAddress+Bridging+Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LSAddress+Bridging+Header.h"; sourceTree = "<group>"; };
+		1A2CEAF51E2FB18D002B3C1B /* LSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSLoginViewController.swift; sourceTree = "<group>"; };
 		1A7825BC1E29FB460024EFB4 /* LSAddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSAddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7825C41E29FB460024EFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A7825C61E29FB460024EFB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,9 +64,9 @@
 		1A2CEADF1E2FAC2D002B3C1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1A2CEAE01E2FAC2D002B3C1B /* Add */,
-				1A2CEAE41E2FAC2D002B3C1B /* Contact */,
 				1A2CEAE91E2FAC2D002B3C1B /* Login */,
+				1A2CEAE41E2FAC2D002B3C1B /* Contact */,
+				1A2CEAE01E2FAC2D002B3C1B /* Add */,
 				1A2CEAEE1E2FAC2D002B3C1B /* Other */,
 			);
 			path = Classes;
@@ -138,19 +138,11 @@
 		1A2CEAE91E2FAC2D002B3C1B /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				1A2CEAEA1E2FAC2D002B3C1B /* Controller */,
-				1A2CEAEB1E2FAC2D002B3C1B /* LSLoginViewController.swift */,
+				1A2CEAF41E2FB18D002B3C1B /* Controller */,
 				1A2CEAEC1E2FAC2D002B3C1B /* Model */,
 				1A2CEAED1E2FAC2D002B3C1B /* View */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		1A2CEAEA1E2FAC2D002B3C1B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		1A2CEAEC1E2FAC2D002B3C1B /* Model */ = {
@@ -174,6 +166,14 @@
 				1A2CEAF01E2FAC2D002B3C1B /* LSAddress+Bridging+Header.h */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		1A2CEAF41E2FB18D002B3C1B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1A2CEAF51E2FB18D002B3C1B /* LSLoginViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1A7825B31E29FB460024EFB4 = {
@@ -324,9 +324,9 @@
 				1A2CEAF31E2FAC2D002B3C1B /* AppDelegate.swift in Sources */,
 				1A7826041E29FBCF0024EFB4 /* SVRadialGradientLayer.m in Sources */,
 				1A7826031E29FBCF0024EFB4 /* SVProgressHUD.m in Sources */,
-				1A2CEAF21E2FAC2D002B3C1B /* LSLoginViewController.swift in Sources */,
 				1A7825FF1E29FBCF0024EFB4 /* MBProgressHUD.m in Sources */,
 				1A7826011E29FBCF0024EFB4 /* SVProgressAnimatedView.m in Sources */,
+				1A2CEAF61E2FB18D002B3C1B /* LSLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,11 +35,12 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
 //
         self.textChange()
         
+//        self.autoLogin.isOn = false
+        
         if self.autoLogin.isOn {
             self.clickLoginBtn(Any.self)
         }
         
-//        self.accountTextField.text.isFirstResponder = true
         self.accountTextField.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
@@ -88,11 +89,7 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
         
         if self.accountTextField.text! == "rock" && self.passwordTextField.text! == "rock" {
            
-            
 
-//            SVProgressHUD.showInfo(withStatus: "正在登陆")
-//            MBProgressHUD.showMessage("wgb")
-//            SVProgressHUD.showProgress(3.3)
             SVProgressHUD.show(withStatus: "正在登陆")
    
             
@@ -132,7 +129,6 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-//        self.view.endEditing(true)
         self.view.endEditing(true)
     }
     
@@ -144,6 +140,8 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
         print("源控制器" + "\(sourceController)" + "目标控制器" + "\(destController)"  )
         //在Segue里进行传值
         destController.navigationItem.title = self.accountTextField.text
-    }
+//        destController.nam
+        
 
+    }
 }
