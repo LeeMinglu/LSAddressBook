@@ -11,6 +11,7 @@
 		1A2CEAF31E2FAC2D002B3C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CEAEF1E2FAC2D002B3C1B /* AppDelegate.swift */; };
 		1A2CEAF61E2FB18D002B3C1B /* LSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CEAF51E2FB18D002B3C1B /* LSLoginViewController.swift */; };
 		1A2CEAFA1E30F59B002B3C1B /* LSAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CEAF91E30F59B002B3C1B /* LSAddViewController.swift */; };
+		1A3D8F941E331DD5005601AA /* LSEditeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D8F931E331DD5005601AA /* LSEditeViewController.swift */; };
 		1A6504111E323C6D0097CE19 /* LSContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6504101E323C6D0097CE19 /* LSContact.swift */; };
 		1A7825C51E29FB460024EFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7825C31E29FB460024EFB4 /* Main.storyboard */; };
 		1A7825C71E29FB460024EFB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7825C61E29FB460024EFB4 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		1A2CEAF01E2FAC2D002B3C1B /* LSAddress+Bridging+Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LSAddress+Bridging+Header.h"; sourceTree = "<group>"; };
 		1A2CEAF51E2FB18D002B3C1B /* LSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSLoginViewController.swift; sourceTree = "<group>"; };
 		1A2CEAF91E30F59B002B3C1B /* LSAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSAddViewController.swift; sourceTree = "<group>"; };
+		1A3D8F931E331DD5005601AA /* LSEditeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSEditeViewController.swift; sourceTree = "<group>"; };
 		1A6504101E323C6D0097CE19 /* LSContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSContact.swift; sourceTree = "<group>"; };
 		1A7825BC1E29FB460024EFB4 /* LSAddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSAddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7825C41E29FB460024EFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		1A2CEADF1E2FAC2D002B3C1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1A3D8F8B1E331CAE005601AA /* Edit */,
 				1A2CEAE91E2FAC2D002B3C1B /* Login */,
 				1A2CEAE41E2FAC2D002B3C1B /* Contact */,
 				1A2CEAE01E2FAC2D002B3C1B /* Add */,
@@ -182,6 +185,38 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		1A3D8F8B1E331CAE005601AA /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D8F8C1E331CAE005601AA /* Controller */,
+				1A3D8F8E1E331CAE005601AA /* Model */,
+				1A3D8F8F1E331CAE005601AA /* View */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		1A3D8F8C1E331CAE005601AA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D8F931E331DD5005601AA /* LSEditeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1A3D8F8E1E331CAE005601AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A3D8F8F1E331CAE005601AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1A7825B31E29FB460024EFB4 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +310,7 @@
 		1A7825B41E29FB460024EFB4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LS;
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = SocererGroup;
@@ -331,6 +367,7 @@
 				1A2CEAF31E2FAC2D002B3C1B /* AppDelegate.swift in Sources */,
 				1A7826041E29FBCF0024EFB4 /* SVRadialGradientLayer.m in Sources */,
 				1A2CEAFA1E30F59B002B3C1B /* LSAddViewController.swift in Sources */,
+				1A3D8F941E331DD5005601AA /* LSEditeViewController.swift in Sources */,
 				1A7826031E29FBCF0024EFB4 /* SVProgressHUD.m in Sources */,
 				1A7825FF1E29FBCF0024EFB4 /* MBProgressHUD.m in Sources */,
 				1A7826011E29FBCF0024EFB4 /* SVProgressAnimatedView.m in Sources */,

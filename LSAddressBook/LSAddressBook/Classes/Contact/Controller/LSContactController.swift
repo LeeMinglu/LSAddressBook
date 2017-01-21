@@ -10,7 +10,6 @@ import UIKit
 
 class LSContactController: UITableViewController, LSAddViewControllerDelegate {
     
-    open var contact: LSContact?
     var contacts: [LSContact] = []
     
    
@@ -146,8 +145,21 @@ class LSContactController: UITableViewController, LSAddViewControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let addVC = segue.destination as! LSAddViewController
-        addVC.delegate = self
+        
+        
+        if segue.destination.isKind(of: LSAddViewController.classForCoder()) {
+            let addVC = segue.destination as! LSAddViewController
+            addVC.delegate = self
+        
+        } else {
+            let editeVC = segue.destination as! LSEditeViewController
+            
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            let contacted = self.contacts[0]
+            
+            editeVC.contact = contacted
+            
+        }
         
     }
     
