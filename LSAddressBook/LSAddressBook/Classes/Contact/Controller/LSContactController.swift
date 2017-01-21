@@ -11,24 +11,25 @@ import UIKit
 class LSContactController: UITableViewController, LSAddViewControllerDelegate {
     
     open var contact: LSContact?
+    var contacts: [LSContact] = []
     
-    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let three = DispatchTime.now() + 1.0
         
-//        print("我进来了" + "\(name!)")
-        
-        
-        
         SVProgressHUD.showInfo(withStatus: "登陆成功")
         DispatchQueue.main.asyncAfter(deadline: three, execute: {
             SVProgressHUD.dismiss()
         })
+        
+        
 
+        
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -46,23 +47,36 @@ class LSContactController: UITableViewController, LSAddViewControllerDelegate {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.contacts.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let identifier = "contact"
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        
+        if cell == nil {
+            cell = UITableViewCell.init(style: .value1, reuseIdentifier: identifier)
+        }
+        
+
+        
+        let contact = self.contacts[indexPath.row]
+        
+        cell?.textLabel!.text = contact.name!
+        cell?.detailTextLabel!.text = contact.phone!
 
         // Configure the cell...
 
-        return cell
+        return cell!
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -139,7 +153,11 @@ class LSContactController: UITableViewController, LSAddViewControllerDelegate {
     
     //执行代理
     func addViewController(addVC: LSAddViewController, contact: LSContact) {
-        print(contact.name!)
+        print("执行添加联系人代理")
+        self.contacts.append(contact)
+        
+        self.tableView.reloadData()
+        
     }
 
 }
