@@ -284,6 +284,9 @@
                                 <rect key="frame" x="171" y="245" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="修改"/>
+                                <connections>
+                                    <action selector="modifiedBtn:" destination="fpe-BE-EUj" eventType="touchUpInside" id="N5G-3j-oDQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

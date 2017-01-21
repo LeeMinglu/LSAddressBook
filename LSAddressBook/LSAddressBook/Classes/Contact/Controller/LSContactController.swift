@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LSContactController: UITableViewController, LSAddViewControllerDelegate {
+class LSContactController: UITableViewController, LSAddViewControllerDelegate, LSEditViewControllerDelegate {
     
     var contacts: [LSContact] = []
     
@@ -155,9 +155,11 @@ class LSContactController: UITableViewController, LSAddViewControllerDelegate {
             let editeVC = segue.destination as! LSEditeViewController
             
             let indexPath = self.tableView.indexPathForSelectedRow!
-            let contacted = self.contacts[0]
+            let contacted = self.contacts[indexPath.row]
             
             editeVC.contact = contacted
+            
+            editeVC.deleagte = self
             
         }
         
@@ -170,6 +172,11 @@ class LSContactController: UITableViewController, LSAddViewControllerDelegate {
         
         self.tableView.reloadData()
         
+    }
+    
+    func motifiedBtnClicked(editeVC: LSEditeViewController, contact: LSContact) {
+        
+        self.tableView.reloadData()
     }
 
 }
