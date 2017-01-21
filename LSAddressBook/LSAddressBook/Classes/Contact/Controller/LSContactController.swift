@@ -8,9 +8,11 @@
 
 import UIKit
 
-class LSContactController: UITableViewController {
+class LSContactController: UITableViewController, LSAddViewControllerDelegate {
     
-    public var name: String?
+    open var contact: LSContact?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class LSContactController: UITableViewController {
         let three = DispatchTime.now() + 1.0
         
 //        print("我进来了" + "\(name!)")
+        
+        
         
         SVProgressHUD.showInfo(withStatus: "登陆成功")
         DispatchQueue.main.asyncAfter(deadline: three, execute: {
@@ -125,6 +129,17 @@ class LSContactController: UITableViewController {
     
     @IBAction func clickAddContact(_ sender: Any) {
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addVC = segue.destination as! LSAddViewController
+        addVC.delegate = self
+        
+    }
+    
+    //执行代理
+    func addViewController(addVC: LSAddViewController, contact: LSContact) {
+        print(contact.name!)
     }
 
 }

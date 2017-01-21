@@ -8,7 +8,20 @@
 
 import UIKit
 
+protocol LSAddViewControllerDelegate {
+    
+    func addViewController(addVC: LSAddViewController, contact: LSContact)
+    
+    
+}
+
 class LSAddViewController: UIViewController {
+    
+    var contact: LSContact!
+    var contactVC: LSContactController!
+    
+    open var delegate: LSAddViewControllerDelegate!
+    
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var numberOfTelPhone: UITextField!
@@ -39,6 +52,18 @@ class LSAddViewController: UIViewController {
         
         self.addBtn.isEnabled = !(self.nameTextField.text!.isEmpty) && !(self.numberOfTelPhone.text!.isEmpty)
     }
+    
+    @IBAction func addBtnClicked(_ sender: Any) {
+        
+        self.contact = LSContact.init(name: self.nameTextField.text!, phone: self.numberOfTelPhone.text!)
+        
+       self.delegate?.addViewController(addVC: self, contact: contact)
+        
+        self.navigationController!.popViewController(animated: true)
+        
+        
+    }
+    
     
 
     /*
