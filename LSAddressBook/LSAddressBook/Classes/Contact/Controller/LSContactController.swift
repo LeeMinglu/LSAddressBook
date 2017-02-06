@@ -177,6 +177,10 @@ class LSContactController: UITableViewController, LSAddViewControllerDelegate, L
     func motifiedBtnClicked(editeVC: LSEditeViewController, contact: LSContact) {
         
         self.tableView.reloadData()
+    //    let indexPath = self.tableView.indexPathForSelectedRow
+        
+    //   self.tableView.reloadRows(at: [indexPath!], with: .none)
+        
     }
 
 }

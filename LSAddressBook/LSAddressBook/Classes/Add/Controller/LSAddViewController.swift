@@ -35,7 +35,7 @@ class LSAddViewController: UIViewController {
         self.nameTextField.addTarget(self, action: #selector(textchange), for: .editingChanged)
         self.numberOfTelPhone.addTarget(self, action: #selector(textchange), for: .editingChanged)
         
-        
+        self.textchange()
     }
     
     override func viewDidAppear(_ animated: Bool) {

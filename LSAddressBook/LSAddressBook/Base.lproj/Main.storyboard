@@ -56,7 +56,7 @@
                                 <state key="normal" title="登陆"/>
                                 <connections>
                                     <action selector="clickLoginBtn:" destination="btF-gG-Nw5" eventType="touchUpInside" id="zvr-hZ-d0f"/>
-                                    <segue destination="cuD-Xz-VHz" kind="show" identifier="login2Contact" id="JaW-gU-yQf"/>
+                                    <segue destination="cuD-Xz-VHz" kind="push" identifier="login2Contact" id="JaW-gU-yQf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="记住密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP3-3x-Bzd">

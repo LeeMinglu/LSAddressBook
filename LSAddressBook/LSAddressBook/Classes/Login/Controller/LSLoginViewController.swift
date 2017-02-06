@@ -18,12 +18,23 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var loginBtn: UIButton!
     
+    let defaults = UserDefaults.init()
+    let accountKey = "accountKey"
+    let passwordKey = "passwordKey"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.accountTextField.text! = "rock"
         self.passwordTextField.text! = "rock"
+//        let accouctValue = defaults.value(forKey: accountKey) as! String
+//        if (accouctValue.isEmpty) {
+//            self.accountTextField.text = accouctValue
+//        }
+        
+        
+//        self.passwordTextField.text = defaults.value(forKey: passwordKey) as? String
         
 //        self.passwordTextField.delegate = self
 //        self.accountTextField.delegate = self
@@ -100,6 +111,12 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
             })
             DispatchQueue.main.asyncAfter(deadline: three, execute: {
                 self.performSegue(withIdentifier: "login2Contact", sender: nil)
+//                
+                
+//                let sb = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = sb.instantiateViewController(withIdentifier: "login2Contact") as! LSContactController
+//                self.navigationController!.pushViewController(vc, animated: true)
+
             })
             
 
@@ -120,7 +137,7 @@ class LSLoginViewController: UIViewController, UITextFieldDelegate{
     
     override func viewWillDisappear(_ animated: Bool) {
         if !(self.remberPwd.isOn)   {
-//            self.accountTextField.text = ""
+            self.accountTextField.text = ""
             self.passwordTextField.text = ""
         } else {
             print("此时会记住密码")
